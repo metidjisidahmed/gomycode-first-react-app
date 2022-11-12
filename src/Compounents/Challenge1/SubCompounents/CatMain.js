@@ -1,77 +1,64 @@
 import Cat from "../../../assets/images/Cat.png";
 
 
-const  CatTables=()=>{
+const  CatTables=(props)=>{
+
+
     return(
         <section>
             <h3>Available cat breed to buy :</h3>
-            <table>
+            <table border={1}>
             <tr>
                 <th>Breed name</th>
                 <th>Price</th>
                 <th>Image preview</th>
             </tr>
-            <tr>
-                <td>Siamese</td>
-                <td className="prices">75$</td>
-                <td><img height="100px" width="100px"
-                         src="https://www.litter-robot.com/media/blog/alex-meier-siamese.jpg" alt=""/></td>
-            </tr>
-            <tr>
-                <td>Persian</td>
-                <td className="prices">40$</td>
-                <td><img height="100px" width="100px"
-                         src="https://images.unsplash.com/photo-1591429939960-b7d5add10b5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc2lhbiUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80"
-                         alt=""/></td>
-            </tr>
-            <tr>
-                <td>Sphynx</td>
-                <td className="prices" style={ {color :"white !important"}  }>250$</td>
-                <td><img height="100px" width="100px"
-                         src="https://vetstreet.brightspotcdn.com/dims4/default/02bd838/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Fa3%2F767b00a33511e087a80050568d634f%2Ffile%2FSphynx-4-645mk062211.jpg"
-                         alt=""/></td>
-            </tr>
-            <tr>
-                <td>Maine Coon</td>
-                <td className="prices">80$</td>
-                <td><img height="100px" width="100px"
-                         src="https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-06/Maine-Coon-Cat.jpg?itok=XrHCK4xn"
-                         alt=""/></td>
 
-            </tr>
-            <tr>
-                <td>Ragdoll</td>
-                <td className="prices">50$</td>
-                <td><img height="100px" width="100px"
-                         src="https://www.catsbest.eu/wp-content/uploads/Ragdoll-1-e1607423517672.jpg" alt=""/></td>
-            </tr>
+                { props.catsArrays.map(cat=>{
+                    return(
+                        <tr>
+                            <td>{cat.breedName}</td>
+                            <td className="prices">{cat.price}$</td>
+                            <td><img height="100px" width="100px" src={cat.imageLink} alt=""/></td>
+                        </tr>
+                    )
+                })}
         </table>
         </section>
     )
 }
 
-const LoveCats =() =>{
+const LoveCats =(props) =>{
+
+
     return(
         <section>
             <h2>Cat Lists</h2>
             <h3>Things cats love:</h3>
             <ul>
-                <li>cat nip</li>
-                <li>laser pointers</li>
-                <li>lasagna</li>
+                {
+                    props.catsLove.map(love=>{
+                        return(
+                            <li>{love}</li>
+                        )
+                    })
+                }
             </ul>
         </section>
     )
 }
 
-const HateCats=()=>{
+const HateCats=(props)=>{
+
     return(
         <section>
             <h3>Top 3 things cats hate:</h3>
             <ol>
-                <li>flea treatment</li>
-                <li>thunder</li>
-                <li>other cats</li>
+                {props.catsHate.map(hate=>{
+                    return(
+                        <li>{hate}</li>
+                    )
+                })}
             </ol>
         </section>
     )
@@ -142,7 +129,11 @@ const  FormsCats =()=>{
 }
 
 
-  function CatMain(){
+  function CatMain(props){
+
+
+
+
     return(
         <main>
             <section>
@@ -154,9 +145,9 @@ const  FormsCats =()=>{
                     alt="A cute orange cat lying on its back."/> </a>
             </section>
 
-            <LoveCats/>
+            <LoveCats catsLove={props.catsLove}/>
 
-            <HateCats/>
+            <HateCats catsHate={props.catsHate}/>
 
             <CatsLoveLasagna/>
             <section>
@@ -165,7 +156,7 @@ const  FormsCats =()=>{
                 <figcaption>Cat <strong>hate</strong> other cats.</figcaption>
             </section>
 
-            <CatTables/>
+            <CatTables catsArrays={props.catArrays}/>
 
             <FormsCats/>
             <mohcen> Je suis mohcen</mohcen>

@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles.css'
-import Challenge1App from "./Compounents/Challenge1/Challenge1App";
+import Index from "./Compounents/Challenge1";
 import CompounentsEssay from "./Compounents/CompounentsEssay";
+import {PropsPractice} from "./Compounents/PropsPractice";
+import Challenge1 from "./Compounents/Challenge1";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CompounentsEssay />
+    <PropsPractice/>
   </React.StrictMode>
 );
 

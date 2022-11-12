@@ -7,9 +7,8 @@ export default function CompounentsEssay(){
     return(
         <>
             <Son1/>
-
-            {/*<Son2/>*/}
-            {/*<Son3/>*/}
+            <Son2/>
+            <Son3/>
         </>
 
     )
