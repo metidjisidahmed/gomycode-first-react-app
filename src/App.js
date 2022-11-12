@@ -32,7 +32,9 @@ function App() {
         <h1 className={ "title" }  id={ "myH1" } style={     { color : "red" , backgroundColor: "yellow" , fontSize : "2rem" }    }>i HOPE YOU UDERSTOOD WHAT I DID . HAVE A NICE DAY ! :^p </h1>
         <h2>Have a nice day !!!!</h2>
         <span className="badge badge-secondary">New</span>
+
         <FacebookIcon/>
+
         {/*<img src={"assets/images/img.png"} alt={"World Cup"}/>*/}
         <img src={ worldCupImage } alt=""/>
         { MohammedMoudden(firstName , lastName , age)  }
@@ -40,6 +42,11 @@ function App() {
         { elements.map(function (elem){
             return (<div>{elem}</div>)
         })}
+        { MohammedMoudden(firstName , lastName , age)  }
+
+
+        { MohammedMoudden(firstName , lastName , age)  }
+
 
         {/*{[ <div>1</div> ,<div>2</div> , <div>3</div> ]}*/}
 
