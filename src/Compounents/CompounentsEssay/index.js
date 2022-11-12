@@ -3,12 +3,13 @@ import Son2 from "./SubCompounents/Son2";
 import Son3 from "./SubCompounents/Son3";
 
 
-export default function FatherCompounent(){
+export default function CompounentsEssay(){
     return(
         <>
             <Son1/>
-            <Son2/>
-            <Son3/>
+
+            {/*<Son2/>*/}
+            {/*<Son3/>*/}
         </>
 
     )

@@ -5,12 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles.css'
 import Challenge1App from "./Compounents/Challenge1/Challenge1App";
-import FatherCompounent from "./Compounents/CompounentsEssay/FatherCompounent";
+import CompounentsEssay from "./Compounents/CompounentsEssay";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FatherCompounent />
+    <CompounentsEssay />
   </React.StrictMode>
 );
 
